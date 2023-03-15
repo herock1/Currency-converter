@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Currency_converter_Currency_converterUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Currency_converter_Currency_converterUITests
+@end
