@@ -9,15 +9,18 @@ import Foundation
 import Alamofire
 
 class APIService: APIServiceProtocol {
-    
-    private static func performRequest<T:Decodable>(route:HomeRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T, AFError>)->Void) -> DataRequest {
-        return AF.request(route)
-                        .responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
-                            completion(response.result)
-        }
-    }
-    
-    func getData( complete: @escaping (  _ success: Bool, _ currencyLists: CurrencyListResponse, _ error: APIError)->()) {
+    func getData( complete: @escaping ( _ currencyLists: CurrencyListResponse, _ error: APIError)->()) {
         
+        AF.request(HomeRouter.currencyCountryLists)
+            .validate()
+            .responseDecodable(of: CurrencyListResponse.self) { (response) in
+                if let countryList = response.value {
+                    print(countryList.symbols?.keys ?? "No key found")
+                    complete(countryList, APIError.none)
+                }
+                else {
+                    print(response.error)
+                }
+            }
     }
 }

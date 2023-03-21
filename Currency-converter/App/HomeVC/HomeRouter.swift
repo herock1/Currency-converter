@@ -22,7 +22,7 @@ enum HomeRouter: URLRequestConvertible {
     
     private var path: String {
         switch self {
-        case .currencyCountryLists: return ""
+        case .currencyCountryLists: return AppURL.Currecy.list
         case .exchangeRateList: return ""
         case .otherAPI: return ""
         }
@@ -41,7 +41,6 @@ enum HomeRouter: URLRequestConvertible {
     
     var headers: [String: String] {
         switch self {
-            
         case .currencyCountryLists,.exchangeRateList,.otherAPI:
             return [
                 HTTPHeaderField.acceptType.rawValue : ContentType.json.rawValue,
@@ -51,14 +50,15 @@ enum HomeRouter: URLRequestConvertible {
         }
     }
 
-    
     func asURLRequest() throws -> URLRequest {
-        var urlRequest =  URLRequest(url: try "".asURL())
+        
+        let url = URL(string: Configuration.environment.baseURL)!.appendingPathComponent(path)
+        var urlRequest =  URLRequest(url: url)
+        urlRequest.method = method
+        urlRequest.allHTTPHeaderFields = headers
         urlRequest = try URLEncodedFormParameterEncoder(destination: .methodDependent)
           .encode(parameters, into: urlRequest)
-        urlRequest.allHTTPHeaderFields = parameters
+        print(urlRequest.headers)
         return urlRequest
     }
-    
-    
 }

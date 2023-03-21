@@ -15,6 +15,6 @@ enum APIError: String, Error {
 }
 
 protocol APIServiceProtocol {
-    func getData( complete: @escaping (  _ success: Bool,  _ currencyLists: CurrencyListResponse,  _ error: APIError)->())
+    func getData( complete: @escaping ( _ currencyLists: CurrencyListResponse,  _ error: APIError)->())
 }
 

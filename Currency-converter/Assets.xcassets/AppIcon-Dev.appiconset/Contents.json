@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "production.png",
+      "filename" : "dev.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

@@ -18,3 +18,4 @@ struct AppURL {
         static let list = "/iamothers"
     }
 }
+
