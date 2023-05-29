@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 class APIService: APIServiceProtocol {
+    
     func getData( complete: @escaping ( _ currencyLists: CurrencyListResponse, _ error: APIError)->()) {
         
         AF.request(HomeRouter.currencyCountryLists)
@@ -16,7 +17,7 @@ class APIService: APIServiceProtocol {
             .responseDecodable(of: CurrencyListResponse.self) { (response) in
                 if let countryList = response.value {
                     print(countryList.symbols?.keys ?? "No key found")
-                    complete(countryList, APIError.none)
+                     complete(countryList, APIError.none)
                 }
                 else {
                     print(response.error)

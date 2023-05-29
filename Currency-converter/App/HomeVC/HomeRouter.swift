@@ -45,7 +45,7 @@ enum HomeRouter: URLRequestConvertible {
             return [
                 HTTPHeaderField.acceptType.rawValue : ContentType.json.rawValue,
                 HTTPHeaderField.contentType.rawValue : ContentType.json.rawValue,
-                HTTPHeaderField.apikey.rawValue : ContentType.json.rawValue,
+                HTTPHeaderField.apikey.rawValue : Configuration.environment.authToken,
             ]
         }
     }

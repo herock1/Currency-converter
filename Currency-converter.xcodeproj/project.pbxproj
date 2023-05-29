@@ -31,6 +31,7 @@
 		F045485B29ADD30C0047B1A5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045485A29ADD30C0047B1A5 /* AppCoordinator.swift */; };
 		F045485E29ADD8710047B1A5 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045485D29ADD8710047B1A5 /* HomeCoordinator.swift */; };
 		F045486029ADDB320047B1A5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045485F29ADDB320047B1A5 /* HomeViewModel.swift */; };
+		F04DA7DB29D96EDE0036DE50 /* APIServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04DA7DA29D96EDE0036DE50 /* APIServiceTest.swift */; };
 		F05971AA29C7312500C2FD4B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05971A929C7312400C2FD4B /* Configuration.swift */; };
 		F07F6EF229C04A2500637AB1 /* APIHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F6EF129C04A2500637AB1 /* APIHeaders.swift */; };
 		F07F6EF429C058E500637AB1 /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F6EF329C058E500637AB1 /* AppURL.swift */; };
@@ -93,6 +94,7 @@
 		F045485A29ADD30C0047B1A5 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F045485D29ADD8710047B1A5 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		F045485F29ADDB320047B1A5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F04DA7DA29D96EDE0036DE50 /* APIServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTest.swift; sourceTree = "<group>"; };
 		F05971A929C7312400C2FD4B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		F07F6EF129C04A2500637AB1 /* APIHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHeaders.swift; sourceTree = "<group>"; };
 		F07F6EF329C058E500637AB1 /* AppURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURL.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F045483D29ADD1200047B1A5 /* Currency_converterTests.swift */,
+				F04DA7DA29D96EDE0036DE50 /* APIServiceTest.swift */,
 			);
 			path = "Currency-converterTests";
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04DA7DB29D96EDE0036DE50 /* APIServiceTest.swift in Sources */,
 				F045483E29ADD1200047B1A5 /* Currency_converterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

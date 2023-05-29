@@ -23,9 +23,9 @@ enum Environment {
         
     var authToken: String {
             switch self {
-            case .development: return "TqxvsxKq0kM9OPJk47U0L6jAqjwhowzn"
+            case .development: return "GkME6HhtPINMy2PPZiB2dPC90jCmxi9b"
             case .staging: return "staging.api.com"
-            case .release: return "TqxvsxKq0kM9OPJk47U0L6jAqjwhowzn"
+            case .release: return "GkME6HhtPINMy2PPZiB2dPC90jCmxi9b"
             }
         }
 }

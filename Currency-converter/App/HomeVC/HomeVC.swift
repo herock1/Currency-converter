@@ -6,35 +6,38 @@
 //
 
 import UIKit
+import Combine
 
 class HomeVC: UIViewController {
     var coordinator: HomeFlow?
     var currencyList : CurrencyListResponse?
+    var homeViewModel: HomeViewModel?
     var dbservice: DBService?
     var apiservice: APIService?
-
+    var symbols : [String : String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dbservice = DBService()
-//        dbservice?.getData { response,error  in
-//            print("Hello world")
-//        }
+        homeViewModel = HomeViewModel()
+        homeViewModel?.fetchCountryList()
+        showCurrencySymbols()
         
-        apiservice = APIService()
-        apiservice?.getData(complete: { result , error in
-            if(error == APIError.none)
-            {
-                print("API Called")
+        homeViewModel?.countrySymbol.sink(receiveCompletion: {  status in
+            switch status {
+            case .failure(let error ): print(error)
+            case .finished: break
             }
+            print("The API Fetched Perfectly")
+        }, receiveValue: { symbol in
+            print("The API Fetched Perfectly")
+            print(symbol)
+            self.currencyList = symbol
         })
-        // Do any additional setup after loading the view.
-        
-        let currentConfiguration = Configuration.environment.baseURL
-        
-        print(currentConfiguration)
     }
-
-
+    
+    func showCurrencySymbols()
+    {
+      
+    }
 }
 
